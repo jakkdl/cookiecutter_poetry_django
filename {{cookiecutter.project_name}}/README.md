@@ -1,6 +1,7 @@
 # {{cookiecutter.project_name}}
 
 ## run
+ - (optional) create virtual environment
  - `poetry install`
  - `poetry shell`
- - rename .env.example to .env
+ - install pre-commit hooks: `pre-commit install`
