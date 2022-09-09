@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 from pathlib import Path
 from typing import List
+from typing import TYPE_CHECKING
 
 import django_stubs_ext
 
@@ -126,6 +127,6 @@ STATIC_URL = "static/"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-
-# monkeypatch generic types so they can be subscriptable without raising TypeError
-django_stubs_ext.monkeypatch()
+if TYPE_CHECKING:
+    # monkeypatch generic types so they can be subscriptable
+    django_stubs_ext.monkeypatch()
